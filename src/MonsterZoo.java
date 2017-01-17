@@ -61,12 +61,7 @@ public class MonsterZoo {
 				this.balls--;
 				if(this.monsterRare[m]<=r){//monsterRare[m]の値がr以下の場合
 					System.out.println(this.monsterZukan[m]+"を捕まえた！");
-					for(int j=0;j<userMonster.length;j++){
-						if(this.userMonster[j]==null){
-							this.userMonster[j]=this.monsterZukan[m];
-							break;
-						}
-					}
+                    addUserMonster(m);
 					break;//ボール投げ終了
 				}else{
 					System.out.println(this.monsterZukan[m]+"に逃げられた！");
@@ -78,18 +73,22 @@ public class MonsterZoo {
 				System.out.println("卵が孵った！");
 				int m = (int)(this.monsterZukan.length*Math.random());
 				System.out.println(this.monsterZukan[m]+"が産まれた！");
+                addUserMonster(m);
 
-				for(int j=0;j<userMonster.length;j++){
-					if(this.userMonster[j]==null){
-						this.userMonster[j]=this.monsterZukan[m];
-						break;
-					}
-				}
 				this.egg[i]=false;
 				this.eggDistance[i]=0.0;
 			}
 		}
 	}
+
+    public void addUserMonster(int idx) {
+        for (int i = 0; i < this.userMonster.length; i++) {
+            if(this.userMonster[i] == null) {
+                this.userMonster[i] = this.monsterZukan[idx];
+                break;
+            }
+        }
+    }
 
 	public double getDistance() {
 		return distance;
