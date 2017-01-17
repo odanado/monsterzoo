@@ -38,14 +38,7 @@ public class MonsterZoo {
 			this.balls=this.balls+b;
 			this.fruits=this.fruits+f;
 			if(e>=1){//卵を1つ以上Getしたら
-				//egg[]に10個以上卵がない場合は新しい卵データをセットする
-				for(int i=0;i<this.eggDistance.length;i++){
-					if(this.egg[i]==false){
-						this.egg[i]=true;
-						this.eggDistance[i]=0.0;
-						break;
-					}
-				}
+                acquireEgg();
 			}
 		}else if(flg1>=7){
 			int m = (int)(this.monsterZukan.length*Math.random());//monsterZukanからランダムにモンスターを出す
@@ -80,6 +73,17 @@ public class MonsterZoo {
 			}
 		}
 	}
+
+    public void acquireEgg() {
+        //egg[]に10個以上卵がない場合は新しい卵データをセットする
+        for(int i=0;i<this.eggDistance.length;i++){
+            if(this.egg[i]==false){
+                this.egg[i]=true;
+                this.eggDistance[i]=0.0;
+                return;
+            }
+        }
+    }
 
     public void addUserMonster(int idx) {
         for (int i = 0; i < this.userMonster.length; i++) {

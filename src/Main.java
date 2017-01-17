@@ -29,6 +29,7 @@ public class Main {
 
 	}
 
+
 	//テスト用のモンスターデータを登録するメソッド
 	public static void setMonsterZukan(){
 		String tempMonster[] = new String[22];
