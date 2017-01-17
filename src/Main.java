@@ -15,7 +15,7 @@ public class Main {
 				if(pz.getBalls()>0){
 					pz.move();
 					System.out.println("手持ちのボールは"+pz.getBalls()+"個，フルーツは"+pz.getFruits()+"個");
-					System.out.println(pz.getDistance()+"km歩いた．");
+                    pz.distance.showDistance();
 				}else{
 					break;
 				}
