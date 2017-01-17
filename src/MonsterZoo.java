@@ -101,6 +101,13 @@ public class MonsterZoo {
 	public String[] getUserMonster() {
 		return userMonster;
 	}
+    public void showUserMonster() {
+		for(int i=0;i<this.getUserMonster().length;i++){
+            if(this.getUserMonster()[i]!=null){
+				System.out.println(this.getUserMonster()[i]+"を捕まえた．");
+			}
+		}
+    }
 
 	public void setMonsterZukan(String[] monsterZukan) {
 		this.monsterZukan = monsterZukan;
